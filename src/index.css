@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-nude-50 text-ink-600 font-body;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-ink-700;
+  }
+
+  ::selection {
+    @apply bg-gold-200 text-ink-700;
+  }
+
+  :focus-visible {
+    outline: 2px solid #A2814F;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Arch motif: mirror/doorway shape used across the site as the signature frame */
+  .arch {
+    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  }
+
+  .arch-full {
+    border-radius: 999px 999px 0 0;
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #B99764, transparent);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-[1200px] px-6 sm:px-8 lg:px-12;
+  }
+}
