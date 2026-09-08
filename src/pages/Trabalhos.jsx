@@ -7,14 +7,12 @@ const categories = [{ id: "todos", name: "Todos" }, ...services];
 // Placeholder gallery entries. Replace `src` with real photo paths
 // (e.g. "/fotos/sobrancelha-1.jpg") once client photos are available.
 const items = [
-  { id: 1, category: "sobrancelhas", tone: 0 },
-  { id: 2, category: "manicure", tone: 1 },
-  { id: 3, category: "pedicure", tone: 2 },
-  { id: 4, category: "depilacao", tone: 3 },
-  { id: 5, category: "cabelos", tone: 1 },
-  { id: 6, category: "sobrancelhas", tone: 2 },
-  { id: 7, category: "manicure", tone: 3 },
-  { id: 8, category: "cabelos", tone: 0 },
+  { id: 1, category: "sobrancelhas", src: "/images/sobrancelha-1.jpg", title: "Design de Sobrancelhas" },
+  { id: 2, category: "manicure", src: "/images/manicure-1.png", title: "Manicure Clássica" },
+  { id: 3, category: "pedicure", src: "/images/pedicure-1.jpg", title: "Pedicure" },
+  { id: 4, category: "depilacao", src: "/images/depilacao-1.jpg", title: "Depilação" },
+  { id: 5, category: "cabelos", src: "/images/cabelo-1.jpg", title: "Hidratação" },
+  // Adicione quantos itens precisar...
 ];
 
 export default function Trabalhos() {
@@ -49,7 +47,11 @@ export default function Trabalhos() {
 
       <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
         {filtered.map((item) => (
-          <ArchFrame key={item.id} tone={item.tone} />
+          <ArchFrame 
+            key={item.id} 
+            src={item.src} 
+            alt={item.title} 
+          />
         ))}
       </div>
     </section>
